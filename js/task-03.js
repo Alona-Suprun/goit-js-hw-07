@@ -20,12 +20,17 @@ const images = [
   },
 ];
 
-
 // Добавление галереи
 const galleryEl = document.querySelector('#gallery');
 galleryEl.style.display = 'flex';
 galleryEl.style.listStyle = 'none';
+galleryEl.style.justifyContent = 'space-between';
 
-const makeGallery = images.map(imgEl => `<li><img src='${imgEl.url}' alt='${imgEl.alt}' width = "550"></li>`);
+const makeGallery = images
+  .map(
+    imgEl =>
+      `<li><img src='${imgEl.url}' alt='${imgEl.alt}' width = "550"></li>`,
+  )
+  .join('');
 
 galleryEl.insertAdjacentHTML('afterbegin', makeGallery);
